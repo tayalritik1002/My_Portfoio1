@@ -288,14 +288,14 @@
                     <form class="form"
                     action="" onsubmit="sendEmail(); reset();return false">
                         <div class="formfield-container">
-                            <input class="formfield" type="text" name="" id="Name" placeholder="Enter your name"  required/>
+                            <input class="formfield" type="text" name="" id="name" placeholder="Enter your name"  required/>
     
-                            <input class="formfield" type="email" name="email" id="Email"
+                            <input class="formfield" type="email" name="email" id="email"
                                 placeholder="Enter your email address" required />
     
-                            <input class="formfield" type="text" name="subject" id="Subject" placeholder="Enter your subject" required/>
+                            <input class="formfield" type="text" name="subject" id="subject" placeholder="Enter your subject" required/>
     
-                            <textarea name="message" id="Message" cols="30" rows="10" class="formfield formfield-textarea"
+                            <textarea name="message" id="message" cols="30" rows="10" class="formfield formfield-textarea"
                                 placeholder="Enter your message" required></textarea>
     
                         </div>
@@ -328,11 +328,12 @@
                         </div>
                     </div>
                     <div class="icon-wrapper">
-                        <i class="fa-brands fa-linkedin icon"></i>
-                        <i class="fa-brands fa-github icon"></i>
+  <a href="https://www.linkedin.com/in/ritik-tayal1002/" target="_blank"><i class="fa-brands fa-linkedin icon"></i></a>
+                         <!-- <i class="fa-brands fa-linkedin icon"></i> -->
+                        <a href="https://github.com/tayalritik1002" target="_blank"><i class="fa-brands fa-github icon"></i></a>  
                         <i class="fa-brands fa-twitter icon"></i>
-                        <i class="fa-brands fa-instagram icon"></i>
-                        <i class="fa-brands fa-envelope icon"></i>
+                        <a href="https://www.instagram.com/ritikgupta5857/" target="_blank"><i class="fa-brands fa-instagram icon"></i></a>  
+                      <a href="mailto:tayalritik1002@gmail.com" target="_blank"><i class="fa-brands fa-envelope icon"></i></a>  
 
                     </div>
                 </div>
@@ -359,27 +360,40 @@
         });
     </script>
 
-<script src="https://smtpjs.com/v3/smtp.js">
+
+    
+   <script src="https://smtpjs.com/v3/smtp.js">
 </script>
- <script>
-    function sendEmail() {
-        let name=document.getElementById("Name").value;
-        let email=document.getElementById("Email").value;
-        let subject=document.getElementById("Subject").value;
-        let message=document.getElementById("Message").value;
-        let body="name:" +name+"<br/> email:"+email+"<br/> subject:"+subject+"<br/> message:"+message;
+
+<script>
+    var btn = document.getElementById('submit-btn');
+    btn.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var subject = document.getElementById('subject').value;
+        var message = document.getElementById('message').value;
+        var body = 'name: '+name + '<br/> email: ' + email + '<br/> subject: ' + subject + '<br/> message: ' + message;
+
         Email.send({
-            SecureToken: "6df5a6be-ab92-4cc8-8028-8db70d758c4a",
-            // ji ko bejna 
+            SecureToken: "c89d9008-2635-4ad6-8562-ee9c13344faa",
             To: 'tayalritik1002@gmail.com',
-            // medium
-            From: "aashishashu712@gmail.com",
-            Subject: subject,
+            From: "guptaritik1002@gmail.com",
+            Subject: "contact message",
             Body: body
         }).then(
-            message => alert("messsage sent successfully")
+            message => alert(message)
         );
-    }</script>
+
+
+
+
+        console.log('hi');
+    })
+</script>
+
+
 </body>
 
 </html>
